@@ -1,0 +1,15 @@
+# Local log directories
+log/
+logs/
+
+#npm
+node_modules/
+
+# mschell scratch dir with launch codes
+scratch/
+
+#python
+*.pyc
+
+#vs
+.vscode*
