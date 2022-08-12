@@ -9,5 +9,11 @@ From New York City Digital Taxmap versioned feature classes in an ESRI Enterpris
 * Deploy the project to a server
 * Automate tile package generation and publishing
 
+## Output
+
+Temporarily: https://arcg.is/LKLGf
+
+
+
 
 

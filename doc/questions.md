@@ -12,3 +12,7 @@
 
 1. In geoserver styles were stored in xml and could be version controlled, shared, and deployed.  How to meet this requirement with an ArcGIS Pro project as the styler?
 
+2. Does an ArcGIS Pro project contain sensitive info?  Can I drop it into version control and any VM I like?
+
+3. How does one reshare the web layer when share package won't allow a reload to the same layer?  Delete and re-share?
+
