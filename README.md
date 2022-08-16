@@ -15,5 +15,13 @@ Temporarily: https://arcg.is/LKLGf
 
 
 
+## Tests
+
+```
+>testall.bat
+```
+
+
+
 
 
