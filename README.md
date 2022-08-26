@@ -13,6 +13,19 @@ From New York City Digital Taxmap versioned feature classes in an ESRI Enterpris
 
 Temporarily: https://arcg.is/LKLGf
 
+## Data Prep
+
+1. Convert tax_lot_face to tax_lot_face_sdo
+
+2. Populate tax_lot_face_point
+
+(first time only) Set up tax_lot_face_point table.
+
+```
+sqlplus dof_taxmap/iluvesri247@db @src/sql_oracle/setup.sql
+```
+
+
 
 
 ## Tests
