@@ -28,3 +28,27 @@ grant select on
     tax_lot_face_point 
 to 
     MAP_VIEWER;
+@src/sql_oracle/geodatabase_taxmap_pub.sql
+insert /*+ APPEND */ into tax_lot_face_point (
+    objectid
+   ,bbl
+   ,lot_face_length
+   ,azimuth
+   ,shape)
+select
+    a.objectid
+   ,a.bbl
+   ,a.lot_face_length
+   ,CAST(NULL as number)
+   ,SDO_LRS.CONVERT_TO_STD_GEOM(
+                SDO_LRS.LOCATE_PT(
+                        SDO_LRS.CONVERT_TO_LRS_GEOM(a.shape, 0, 100)
+                                ,50)
+                )
+from 
+    tax_lot_face_sdo a
+where 
+    GEODATABASE_TAXMAP_PUB.quarantine_face(a.shape) = 'FALSE';
+commit;
+EXIT
+
