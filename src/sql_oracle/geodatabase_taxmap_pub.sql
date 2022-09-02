@@ -129,15 +129,21 @@ AS
         --dbms_output.put_line('long1: ' || long1); 
         --dbms_output.put_line('long2: ' || long2); 
 
-        dlon := long2 - long1;
+        dlon := long2 - long1; 
 
-        --dbms_output.put_line('dlon: ' || dlon); 
+        -- return 0 for points, polygons, 0-length lines
+        if dlon = 0
+        then
+           return 0;
+        end if;
+
+        --dbms_output.put_line('dlon ' || dlon);
         
         y := sin(dlon) * cos(lat2);
         x := cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dlon);
 
-        --dbms_output.put_line('y: ' || y); 
-        --dbms_output.put_line('x: ' || y);
+        dbms_output.put_line('y: ' || y); 
+        dbms_output.put_line('x: ' || y);
 
         bearing := atan2(y,x);
 
@@ -146,7 +152,9 @@ AS
                                         ,'Degree');
         
         bearing := mod((bearing + 360), 360);
-        --count degrees counter-clockwise - remove to make clockwise
+        --> is 270 now for example
+
+        --flips clockwise
         bearing := 360 - bearing; 
 
         return bearing;
