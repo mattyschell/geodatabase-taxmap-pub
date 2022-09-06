@@ -142,8 +142,8 @@ AS
         y := sin(dlon) * cos(lat2);
         x := cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dlon);
 
-        dbms_output.put_line('y: ' || y); 
-        dbms_output.put_line('x: ' || y);
+        --dbms_output.put_line('y: ' || y); 
+        --dbms_output.put_line('x: ' || y);
 
         bearing := atan2(y,x);
 

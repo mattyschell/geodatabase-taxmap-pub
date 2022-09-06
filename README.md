@@ -25,6 +25,7 @@ Temporarily: https://arcg.is/LKLGf
 sqlplus dof_taxmap/iluvesri247@db @src/sql_oracle/setup.sql
 ```
 
+3. Register tax_lot_face_point if you feel like it
 
 
 

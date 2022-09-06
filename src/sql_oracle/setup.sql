@@ -1,8 +1,10 @@
 create table tax_lot_face_point (
     objectid            number primary key
    ,bbl                 varchar2(10)
-   ,lot_face_length     number
-   ,azimuth             number
+   ,lot_face_length     number 
+   ,azimuth             number(3,0) check(azimuth >= 0 
+                                    and azimuth <= 360
+                                    and azimuth is not null) 
    ,shape               mdsys.sdo_geometry
 );
 insert into user_sdo_geom_metadata  
@@ -39,7 +41,7 @@ select
     a.objectid
    ,a.bbl
    ,a.lot_face_length
-   ,CAST(NULL as number)
+   ,geodatabase_taxmap_pub.sdo_azimuth(a.shape)
    ,SDO_LRS.CONVERT_TO_STD_GEOM(
                 SDO_LRS.LOCATE_PT(
                         SDO_LRS.CONVERT_TO_LRS_GEOM(a.shape, 0, 100)
