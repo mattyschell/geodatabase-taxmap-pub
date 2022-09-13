@@ -1,10 +1,10 @@
 create table tax_lot_face_point (
-    objectid            number primary key
+    objectid            integer primary key
    ,bbl                 varchar2(10)
    ,lot_face_length     number 
    ,azimuth             number(3,0) check(azimuth >= 0 
-                                    and azimuth <= 360
-                                    and azimuth is not null) 
+                                    and   azimuth <= 360
+                                    and   azimuth is not null) 
    ,shape               mdsys.sdo_geometry
 );
 insert into user_sdo_geom_metadata  
@@ -52,5 +52,9 @@ from
 where 
     GEODATABASE_TAXMAP_PUB.quarantine_face(a.shape) = 'FALSE';
 commit;
+begin
+    dbms_stats.gather_schema_stats(user);
+end;
+/
 EXIT
 
