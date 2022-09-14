@@ -1,3 +1,4 @@
+@src/sql_oracle/geodatabase_taxmap_pub.sql
 create table tax_lot_face_point (
     objectid            integer primary key
    ,bbl                 varchar2(10)
@@ -30,7 +31,6 @@ grant select on
     tax_lot_face_point 
 to 
     MAP_VIEWER;
-@src/sql_oracle/geodatabase_taxmap_pub.sql
 insert /*+ APPEND */ into tax_lot_face_point (
     objectid
    ,bbl

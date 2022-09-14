@@ -190,4 +190,4 @@ select
     else 
         'fail'
     end as result 
-from dual     
+from dual;     

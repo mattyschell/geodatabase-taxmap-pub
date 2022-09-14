@@ -31,8 +31,10 @@ sqlplus dof_taxmap/iluvesri247@db @src/sql_oracle/setup.sql
 
 ## Tests
 
+Update the environmentals in testall.bat
+
 ```
->testall.bat
+>testall.bat 
 ```
 
 
