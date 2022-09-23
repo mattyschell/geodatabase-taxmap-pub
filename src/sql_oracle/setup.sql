@@ -8,6 +8,7 @@ create table tax_lot_face_point (
                                     and   azimuth is not null) 
    ,shape               mdsys.sdo_geometry
 );
+create sequence tax_lot_face_point_seq start with 1 increment by 1;
 insert into user_sdo_geom_metadata  
     (table_name
     ,column_name
@@ -38,7 +39,7 @@ insert /*+ APPEND */ into tax_lot_face_point (
    ,azimuth
    ,shape)
 select
-    a.objectid
+    tax_lot_face_point_seq.nextval
    ,a.bbl
    ,a.lot_face_length
    ,geodatabase_taxmap_pub.sdo_azimuth(a.shape)

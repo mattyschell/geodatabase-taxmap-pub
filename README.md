@@ -25,6 +25,13 @@ Temporarily: https://arcg.is/LKLGf
 sqlplus dof_taxmap/iluvesri247@db @src/sql_oracle/setup.sql
 ```
 
+Following times.  See variables in this script, set days to 7 or so.
+
+```
+samplepointmill.bat
+```
+
+
 3. Register tax_lot_face_point if you feel like it
 
 
